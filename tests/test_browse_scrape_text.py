@@ -97,8 +97,6 @@ class TestScrapeText:
 
         # Check that the function properly handles HTML tags
         assert result == "This is bold text."
-<<<<<<< Updated upstream
-=======
 
     # Tests that scrape_text() properly handles HTML entities.
     def test_scrape_text_with_html_entities(self, mocker):
@@ -114,4 +112,3 @@ class TestScrapeText:
 
         # Check that the function properly handles HTML entities
         assert result == "This is & text."
->>>>>>> Stashed changes
