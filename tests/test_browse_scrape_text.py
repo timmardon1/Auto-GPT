@@ -97,3 +97,21 @@ class TestScrapeText:
 
         # Check that the function properly handles HTML tags
         assert result == "This is bold text."
+<<<<<<< Updated upstream
+=======
+
+    # Tests that scrape_text() properly handles HTML entities.
+    def test_scrape_text_with_html_entities(self, mocker):
+        # Create a mock response object with HTML containing entities
+        html = "<html><body><p>This is &amp; text.</p></body></html>"
+        mock_response = mocker.Mock()
+        mock_response.status_code = 200
+        mock_response.text = html
+        mocker.patch("requests.get", return_value=mock_response)
+
+        # Call the function with a URL
+        result = scrape_text("https://www.example.com")
+
+        # Check that the function properly handles HTML entities
+        assert result == "This is & text."
+>>>>>>> Stashed changes
